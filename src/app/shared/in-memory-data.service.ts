@@ -47,7 +47,7 @@ export class InMemoryDataService implements InMemoryDbService {
             id: 2,
             index: 1,
             name: '四月一日灵异事件簿',
-            cover: '',
+            cover: 'http://img0.imgtn.bdimg.com/it/u=1751620650,1267900548&fm=214&gp=0.jpg',
             description: '少年与迷之大姐姐的相遇是偶然还是必然呢？……',
             date: '2006-04-06'
         }]

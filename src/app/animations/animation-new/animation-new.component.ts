@@ -44,8 +44,18 @@ export class AnimationNewComponent implements OnInit {
     }
 
     addSeason() {
+        let newSeason = new Season();
+        newSeason.index = this.seasons.length + 1; // index 递增
 
-        this.seasons.push(this.fb.group(new Season()));
+        let newSeasonFC = {};
+        for(let [key, value] of Object.entries(newSeason)){
+            newSeasonFC[key] = this.fb.control(value, Validators.required);
+        }
+
+        this.seasons.push(this.fb.group(newSeasonFC));
+
+        console.log('[test] newSeason : ', newSeason); // TODO test to del
+        console.log('[test] newSeasonFC : ', newSeasonFC); // TODO test to del
     }
 
     prepareSaveAnimation() {
