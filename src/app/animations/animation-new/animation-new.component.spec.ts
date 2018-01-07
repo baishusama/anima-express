@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AnimationDetailComponent } from './animation-detail.component';
+import { AnimationNewComponent } from './animation-new.component';
 
-describe('AnimationDetailComponent', () => {
-    let component: AnimationDetailComponent;
-    let fixture: ComponentFixture<AnimationDetailComponent>;
+describe('AnimationNewComponent', () => {
+    let component: AnimationNewComponent;
+    let fixture: ComponentFixture<AnimationNewComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [AnimationDetailComponent]
+            declarations: [AnimationNewComponent]
         })
             .compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(AnimationDetailComponent);
+        fixture = TestBed.createComponent(AnimationNewComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

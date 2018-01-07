@@ -1,0 +1,83 @@
+<div class="container">
+    <h2>添加动画</h2>
+    <form [formGroup]="animationForm" novalidate>
+
+        <div class="form-group">
+            <label class="center-block">名称：
+                <input type="text" formControlName="name"
+                       class="form-control">
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label class="center-block">封面：
+                <input type="text" formControlName="cover"
+                       class="form-control" placeholder="图片链接（http://）">
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label class="center-block">描述：
+                <input type="text" formControlName="description"
+                       class="form-control" placeholder="请控制在 200 字以内～">
+            </label>
+        </div>
+
+        <div formArrayName="tags">
+            标签：
+            <div *ngFor="let tag of tags.controls; let i = index">
+                <div class="form-group">
+                    <label class="center-block">
+                        <input type="text" [formControlName]="i">
+                    </label>
+                </div>
+            </div>
+            <button type="button" (click)="addTag()">+</button>
+        </div>
+
+        <div formArrayName="seasons" class="well well-lg">
+            <button type="button" (click)="addSeason()">Add a Season</button>
+            <div *ngFor="let season of seasons.controls; let i = index"
+                 [formGroupName]="i">
+                <div class="form-group">
+                    <label class="center-block">第 <input type="text" formControlName="index"
+                                                         class="" placeholder="n"> 季
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label class="center-block">名称：
+                        <input type="text" formControlName="name" class="form-control">
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label class="center-block">封面：
+                        <input type="text" formControlName="cover"
+                               class="form-control" placeholder="图片链接（http://）">
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label class="center-block">描述：
+                        <input type="text" formControlName="description"
+                               class="form-control" placeholder="请控制在 200 字以内～">
+                    </label>
+                </div>
+
+                <!-- TODO: date -->
+                <div class="form-group">
+                    <label class="center-block">首播时间：
+                        <input type="text" formControlName="date"
+                               class="form-control" placeholder="">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <p>Form value: {{ animationForm.value | json }}</p>
+        <p>Name value: {{ animationForm.get('name').value }}</p>
+        <!--<p>Street value: {{ animationForm.get('address.street').value }}</p>-->
+        <p>Form status: {{ animationForm.status | json }}</p>
+    </form>
+</div>

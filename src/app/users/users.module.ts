@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { UsersComponent } from './users.component';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: [UsersComponent]
+    imports: [
+        CommonModule
+    ],
+    declarations: [UsersComponent]
 })
-export class UsersModule { }
+export class UsersModule {
+}
