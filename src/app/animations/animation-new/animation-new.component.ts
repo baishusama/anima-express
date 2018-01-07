@@ -47,6 +47,8 @@ export class AnimationNewComponent implements OnInit {
         let newSeason = new Season();
         newSeason.index = this.seasons.length + 1; // index 递增
 
+        // TODO: 感觉这么写很麻烦，而且如果有除了 required 之外的验证，且每个 attr 不一样怎么写比较好？
+        //       只能每个 attr 挨个写了吧……
         let newSeasonFC = {};
         for(let [key, value] of Object.entries(newSeason)){
             newSeasonFC[key] = this.fb.control(value, Validators.required);

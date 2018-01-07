@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './shared/in-memory-data.service';
 
+import { AuthGuardService } from './shared/auth-guard.service';
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -23,10 +25,12 @@ import { AnimationsModule } from './animations/animations.module';
         HttpClientInMemoryWebApiModule.forRoot(
             InMemoryDataService, {dataEncapsulation: false}
         ),
-        AnimationsModule,
+        AnimationsModule, // includes child routing module should be in front of AppRoutingModule
         AppRoutingModule
     ],
-    providers: [],
+    providers: [
+        AuthGuardService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {
