@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import {AnimationService} from '../shared/animation.service';
+
 @Component({
     selector: 'app-animation-list',
     templateUrl: './animation-list.component.html',
@@ -7,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnimationListComponent implements OnInit {
 
-    constructor() {
+    constructor(
+        private animationService: AnimationService
+    ) {
     }
 
     ngOnInit() {
+        this.animationService.getAnimations().subscribe();
     }
 
 }
