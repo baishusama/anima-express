@@ -11,9 +11,9 @@ export class AuthService {
     constructor() {
     }
 
-    login(): Observable<boolean> {
+    /*login(): Observable<boolean> {
         // return
-    }
+    }*/
 
     logout() {
     }
