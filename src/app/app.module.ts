@@ -5,9 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 // TODO: test to del
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './shared/in-memory-data.service';
+import { InMemoryDataService } from './core/services/in-memory-data.service';
 
-import { AuthGuardService } from './shared/auth-guard.service';
+import { AuthGuardService } from './core/services/auth-guard.service';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';

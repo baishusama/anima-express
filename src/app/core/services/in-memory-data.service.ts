@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
-import { Animation } from '../animations/shared/animation.model';
+import { Animation } from '../../animations/shared/animation.model';
 
 @Injectable()
 export class InMemoryDataService implements InMemoryDbService {
