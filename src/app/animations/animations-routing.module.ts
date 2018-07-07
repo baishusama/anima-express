@@ -14,8 +14,11 @@ const animationRoutes: Routes = [
     {
         path: 'anime/new',
         component: AnimationNewComponent
-    }, // Note that /new should before /:id
-    // , TODO is there any other way ? like make :id must be number if possible ?
+    },
+    /**
+     * Note that /new should before /:id
+     * , TODO: is there any other way ? like make :id must be number if possible ?
+     */
     {
         path: 'anime/:id',
         component: AnimationDetailComponent
@@ -26,6 +29,4 @@ const animationRoutes: Routes = [
     imports: [RouterModule.forChild(animationRoutes)], // TODO: how ?
     exports: [RouterModule]
 })
-export class AnimationsRoutingModule {
-
-}
+export class AnimationsRoutingModule {}

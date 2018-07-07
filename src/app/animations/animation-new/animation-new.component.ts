@@ -7,19 +7,20 @@ import { AnimationService } from '../shared/animation.service';
 @Component({
     selector: 'app-animation-new',
     templateUrl: './animation-new.component.html',
-    styleUrls: ['./animation-new.component.css']
+    styleUrls: ['./animation-new.component.scss']
 })
 export class AnimationNewComponent implements OnInit {
     animation: any;
     animationForm: FormGroup;
 
-    constructor(private fb: FormBuilder,
-                private animationService: AnimationService) {
+    constructor(
+        private fb: FormBuilder,
+        private animationService: AnimationService
+    ) {
         this.createNewAnimationForm();
     }
 
-    ngOnInit() {
-    }
+    ngOnInit() {}
 
     createNewAnimationForm() {
         this.animationForm = this.fb.group({
@@ -50,7 +51,7 @@ export class AnimationNewComponent implements OnInit {
         // TODO: 感觉这么写很麻烦，而且如果有除了 required 之外的验证，且每个 attr 不一样怎么写比较好？
         //       只能每个 attr 挨个写了吧……
         let newSeasonFC = {};
-        for(let [key, value] of Object.entries(newSeason)){
+        for (let [key, value] of Object.entries(newSeason)) {
             newSeasonFC[key] = this.fb.control(value, Validators.required);
         }
 
@@ -78,7 +79,9 @@ export class AnimationNewComponent implements OnInit {
 
     onSubmit() {
         this.animation = this.prepareSaveAnimation();
-        this.animationService.addAnimation(this.animation as Animation).subscribe();
+        this.animationService
+            .addAnimation(this.animation as Animation)
+            .subscribe();
         /* maybe redirect here.. */
     }
 }

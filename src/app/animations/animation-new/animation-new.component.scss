@@ -1,0 +1,5 @@
+@import '~sass/_mixins';
+
+.gfask-test-info {
+    @include test-info;
+}

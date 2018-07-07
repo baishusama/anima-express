@@ -5,7 +5,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 @Component({
     selector: 'app-animation-detail',
     templateUrl: './animation-detail.component.html',
-    styleUrls: ['./animation-detail.component.css']
+    styleUrls: ['./animation-detail.component.scss']
 })
 export class AnimationDetailComponent implements OnInit {
     // animation$: Observable<Animation>;

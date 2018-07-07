@@ -1,21 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
-import {AnimationService} from '../shared/animation.service';
+import { AnimationService } from '../shared/animation.service';
 
 @Component({
     selector: 'app-animation-list',
     templateUrl: './animation-list.component.html',
-    styleUrls: ['./animation-list.component.css']
+    styleUrls: ['./animation-list.component.scss']
 })
 export class AnimationListComponent implements OnInit {
-
-    constructor(
-        private animationService: AnimationService
-    ) {
-    }
+    constructor(private animationService: AnimationService) {}
 
     ngOnInit() {
         this.animationService.getAnimations().subscribe();
     }
-
 }
